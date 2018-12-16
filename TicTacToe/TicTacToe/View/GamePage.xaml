@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.View.GamePage"
+             Title="Tic Tac Toe">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0">
+            <Label Text="{Binding Title}" FontSize="23" FontAttributes="Bold" VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </Frame>
+
+        <Frame Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="button0" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="0"/>
+                <Button x:Name="button1" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="1"/>
+                <Button x:Name="button2" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="2"/>
+                <Button x:Name="button3" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="3"/>
+                <Button x:Name="button4" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="4"/>
+                <Button x:Name="button5" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="1" Grid.Column="2" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="5"/>
+                <Button x:Name="button6" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="6"/>
+                <Button x:Name="button7" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="2" Grid.Column="1" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="7"/>
+                <Button x:Name="button8" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="2" Grid.Column="2" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="8"/>
+
+            </Grid>
+            
+        </Frame>
+
+        <StackLayout x:Name="gameOverStackLayout" Grid.Row="2" IsVisible="{Binding Status}">
+            <Label Text="{Binding Detailgame}" HorizontalTextAlignment="Center" FontSize="Medium"/>
+            <Button Text="Play again" Command="{Binding ResetGame}"/>
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
