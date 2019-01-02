@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace TicTacToe
 {
@@ -44,6 +45,16 @@ namespace TicTacToe
             }
         }
 
+        //public int HistoryID
+        //{
+        //    get { return hg.HistoryID; }
+        //    set
+        //    {
+        //        hg.HistoryID = value;
+        //        RaisePropertyChanged("HistoryID");
+        //    }
+        //}
+
         public string Date
         {
             get { return hg.Date; }
@@ -54,6 +65,33 @@ namespace TicTacToe
             }
         }
 
+
+        HistoryGame history;
+        public HistoryGame historyGame
+        {
+            get { return history; }
+            set
+            {
+                history = value;
+                RaisePropertyChanged("historyGame");
+            }
+        }
+
+        Command deleteHistory;
+        public Command DeleteHistory
+        {
+            get
+            {
+                return deleteHistory ?? (deleteHistory = new Command(DeleteHistoryEvent));
+            }
+        }
+
+        
+        public void DeleteHistoryEvent()
+        {
+            IHistoryrepository.DeleteDB(historyGame);
+            LoadAllHistory();
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

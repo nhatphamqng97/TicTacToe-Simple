@@ -16,5 +16,5 @@ namespace TicTacToe.View
 			InitializeComponent ();
             BindingContext = new HistoryViewModel();
 		}
-	}
+    }
 }

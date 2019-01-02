@@ -31,7 +31,6 @@ namespace TicTacToe.View
             InitializeComponent();
             setButtonArr();
             BindingContext = new GameViewModel(x, y, buttons);
-
         }
     }
 }

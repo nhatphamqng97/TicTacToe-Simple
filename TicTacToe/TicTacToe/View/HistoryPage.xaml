@@ -1,14 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TicTacToe.View.HistoryPage">
+             x:Class="TicTacToe.View.HistoryPage"
+             x:Name="HistoryView">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="lstHistory" ItemsSource="{Binding GetAllHistory}">
-                <ListView.ItemTemplate>
+            <ListView ItemsSource="{Binding GetAllHistory}" SelectedItem="{Binding historyGame , Mode=TwoWay}" SeparatorColor="Black">
+                <ListView.ItemTemplate >
                     <DataTemplate>
-                        <TextCell Text="{Binding Details}" Detail="{Binding Date}" TextColor="Black" DetailColor="Silver" />
+                        <TextCell Text="{Binding Details}" Detail="{Binding Date}" TextColor="Black" DetailColor="Silver" >
+                            <TextCell.ContextActions>
+                                <MenuItem Text=""/>
+                                <MenuItem  Command="{Binding BindingContext.DeleteHistory, Source= {x:Reference HistoryView} }" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                            </TextCell.ContextActions>
+                        </TextCell>
                     </DataTemplate>
+                    
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>

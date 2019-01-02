@@ -9,6 +9,7 @@ namespace TicTacToe
     public interface IHistory
     {
         ObservableCollection<HistoryGame> GetAllHG();
+        HistoryGame GetHistoryGameByID(int id);
         bool InsertDB(HistoryGame us);
         bool DeleteDB(HistoryGame us);
     }

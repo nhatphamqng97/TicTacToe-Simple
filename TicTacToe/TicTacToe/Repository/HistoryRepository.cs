@@ -29,5 +29,9 @@ namespace TicTacToe
             return new ObservableCollection<HistoryGame>(db.GetAll());
         }
 
+        public HistoryGame GetHistoryGameByID(int id)
+        {
+           return db.GetHistoryByID(id);
+        }
     }
 }

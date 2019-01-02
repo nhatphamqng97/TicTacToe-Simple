@@ -75,5 +75,25 @@ namespace TicTacToe
                 return null;
             }
         }
+
+        //Select by ID:
+        public HistoryGame GetHistoryByID(int historyID)
+        {
+            try
+            {
+                using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "historyGame.db3")))
+                {
+                    var lh = from l in connection.Table<HistoryGame>().ToList()
+                             where l.HistoryID == historyID
+                             select l;
+                    return lh.ToList().FirstOrDefault();
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                return null;
+            }
+        }
+
     }
 }
