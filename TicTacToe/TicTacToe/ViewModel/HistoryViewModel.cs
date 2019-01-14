@@ -44,17 +44,6 @@ namespace TicTacToe
                 RaisePropertyChanged("Details");
             }
         }
-
-        //public int HistoryID
-        //{
-        //    get { return hg.HistoryID; }
-        //    set
-        //    {
-        //        hg.HistoryID = value;
-        //        RaisePropertyChanged("HistoryID");
-        //    }
-        //}
-
         public string Date
         {
             get { return hg.Date; }
@@ -65,6 +54,16 @@ namespace TicTacToe
             }
         }
 
+        int historyID;
+        public int HistoryID
+        {
+            get { return historyID; }
+            set
+            {
+                historyID = value;
+                RaisePropertyChanged("HistoryID");
+            }
+        }
 
         HistoryGame history;
         public HistoryGame historyGame
@@ -86,9 +85,10 @@ namespace TicTacToe
             }
         }
 
-        
+
         public void DeleteHistoryEvent()
         {
+            //historyGame = IHistoryrepository.GetHistoryGameByID(HistoryID);
             IHistoryrepository.DeleteDB(historyGame);
             LoadAllHistory();
         }

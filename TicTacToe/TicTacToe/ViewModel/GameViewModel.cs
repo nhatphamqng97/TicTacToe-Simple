@@ -101,7 +101,6 @@ namespace TicTacToe
                 b.IsEnabled = false;
             }
         }
-
         #endregion
 
         public void ClickEvent(object param)
@@ -206,12 +205,8 @@ namespace TicTacToe
 
         #endregion
 
-
-
         #region Reset Game And Insert Database
 
-
-       
         public void setValueHg()
         {
             hg.Player1 = getP1;

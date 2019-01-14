@@ -32,15 +32,33 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="button0" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="0"/>
-                <Button x:Name="button1" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="1"/>
-                <Button x:Name="button2" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="0" Grid.Column="2" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="2"/>
-                <Button x:Name="button3" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="1" Grid.Column="0" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="3"/>
-                <Button x:Name="button4" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="4"/>
-                <Button x:Name="button5" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="1" Grid.Column="2" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="5"/>
-                <Button x:Name="button6" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="6"/>
-                <Button x:Name="button7" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="2" Grid.Column="1" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="7"/>
-                <Button x:Name="button8" Text="" FontSize="20" FontAttributes="Bold" Grid.Row="2" Grid.Column="2" BackgroundColor="Gray" Command="{Binding OnClicked}" CommandParameter="8"/>
+                <Button x:Name="button0" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="0" Grid.Column="0" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="0"/>
+                <Button x:Name="button1" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="0" Grid.Column="1" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="1"/>
+                <Button x:Name="button2" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="0" Grid.Column="2" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="2"/>
+                <Button x:Name="button3" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="1" Grid.Column="0" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="3"/>
+                <Button x:Name="button4" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="1" Grid.Column="1" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="4"/>
+                <Button x:Name="button5" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="1" Grid.Column="2" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="5"/>
+                <Button x:Name="button6" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="2" Grid.Column="0" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="6"/>
+                <Button x:Name="button7" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="2" Grid.Column="1" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="7"/>
+                <Button x:Name="button8" Text="" FontSize="20" FontAttributes="Bold" 
+                        Grid.Row="2" Grid.Column="2" BackgroundColor="Gray" 
+                        Command="{Binding OnClicked}" CommandParameter="8"/>
 
             </Grid>
             

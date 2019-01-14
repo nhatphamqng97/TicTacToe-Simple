@@ -1,63 +1,21 @@
-﻿using Acr.UserDialogs;
-using MvvmHelpers;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Threading.Tasks;
 using TicTacToe.View;
 using Xamarin.Forms;
 
 namespace TicTacToe
 {
-    public class HomeViewModel: BaseViewModel, INotifyPropertyChanged
+    public class HomeViewModel
     {
-
-        public IHistory historyRepositoty;
-        
         INavigation Navigation;
 
         public HomeViewModel(INavigation MainNaV)
         {
             Navigation = MainNaV;
-            historyRepositoty = new HistoryRepository();
         }
 
         public HomeViewModel()
         {
         }
-
-        Command startGameCommand;
-        public Command StartGameCommand
-        {
-            get
-            {
-                return startGameCommand ??
-                    (startGameCommand = new Command(async () => await StartGame(),
-                    () =>
-                    {
-                        if (string.IsNullOrWhiteSpace(Player1) || string.IsNullOrWhiteSpace(Player2))
-                            return false;
-                        return true;
-                    }));
-            }
-
-        }
-
-        Command historyCommand;
-        public Command HistoryCommand
-        {
-            get
-            {
-                return historyCommand ?? (historyCommand = new Command(async () => await HistoryGame()));
-                   
-            }
-
-        }
-
-       
-
 
         string _player1 = string.Empty;
         string _player2 = string.Empty;
@@ -82,11 +40,40 @@ namespace TicTacToe
             }
         }
 
-        async Task StartGame()
+        Command startGameCommand;
+        public Command StartGameCommand
         {
-           await Navigation.PushAsync(new GamePage(Player1, Player2));
+            get
+            {
+                return startGameCommand ??
+                    (startGameCommand = new Command(async () => await StartGame(),
+                    () =>
+                    {
+                        if (string.IsNullOrWhiteSpace(Player1) || string.IsNullOrWhiteSpace(Player2))
+                            return false;
+                        return true;
+                    }));
+            }
+
         }
 
+        async Task StartGame()
+        {
+            await Navigation.PushAsync(new GamePage(Player1, Player2));
+        }
+
+
+        Command historyCommand;
+        public Command HistoryCommand
+        {
+            get
+            {
+                return historyCommand ?? (historyCommand = new Command(async () => await HistoryGame()));
+                   
+            }
+
+        }
+       
         async Task HistoryGame()
         {
             await Navigation.PushAsync(new HistoryPage());
